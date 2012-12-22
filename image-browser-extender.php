@@ -4,7 +4,7 @@
     Plugin URI: http://benjaminsterling.com/wordpress-plugins/wordpress-image-browser-extender/
     Description: Extends the features of the rich text editor for Wordpress by adding a new button that will allow you to easily browse all you image attachments
     Author: Benjamin Sterling
-    Version: 0.3.1
+    Version: 0.3.2
     Author URI: http://benjaminsterling.com
 */
 add_action('wp_ajax_ibe_action', 'ibe_action_callback');

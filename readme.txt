@@ -2,17 +2,15 @@
 Contributors: bmsterling
 Donate link:http://benjaminsterling.com/donations/
 Tags: attachment, browsing, image, insert, richtext, editor, post, page
-Requires at least: 2.5
-Tested up to: 2.5.1
-Stable tag: 0.3.1
+Requires at least: 3.1
+Tested up to: 3.5
+Stable tag: 0.3.2
 
-Extends the features of the rich text editor for Wordpress by adding a new button that will allow you to easily browse all you image attachments
+Extends the features of the rich text editor for Wordpress by adding a new button that will allow you to easily browse all you image attachments.
 
 Please submit any bugs or suggested improvements to <a href=\"https://github.com/bmsterling/Image-Browser-Extender/issues\">https://github.com/bmsterling/Image-Browser-Extender/issues</a>
 
-Need this plugin customized or need a plugin created, contact me via my contact form at <a href=\"http://kenzomedia.com\">http://kenzomedia.com</a>
 
-Also available through twitter, @bmsterling
 
 == Description ==
 
@@ -26,7 +24,7 @@ Extends the features of the rich text editor for Wordpress by adding a new butto
 
 == Credits ==
 
-Copyright 2007  Benjamin Sterling  (http://benjaminsterling.com)
+Copyright 2012  Benjamin Sterling  (http://benjaminsterling.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
