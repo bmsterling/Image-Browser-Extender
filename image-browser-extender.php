@@ -1,53 +1,45 @@
 <?php
 /**
-	Plugin Name: Image Browser Extender
-	Plugin URI: http://benjaminsterling.com/wordpress-plugins/wordpress-image-browser-extender/
-	Description: Extends the features of the rich text editor for Wordpress by adding a new button that will allow you to easily browse all you image attachments
-	Author: Benjamin Sterling
-	Version: 0.3.1
-	Author URI: http://benjaminsterling.com
+    Plugin Name: Image Browser Extender
+    Plugin URI: http://benjaminsterling.com/wordpress-plugins/wordpress-image-browser-extender/
+    Description: Extends the features of the rich text editor for Wordpress by adding a new button that will allow you to easily browse all you image attachments
+    Author: Benjamin Sterling
+    Version: 0.3.1
+    Author URI: http://benjaminsterling.com
 */
+add_action('wp_ajax_ibe_action', 'ibe_action_callback');
 
-/**
- *	Load WP-Config File If This File Is Called Directly
- */
-if (!function_exists('add_action')) {
-	require_once('../../../wp-load.php');
-	require_once('../../../wp-admin/includes/media.php');
-} //  end : if (!function_exists('add_action'))
+function ibe_action_callback () {
+    global $wpdb;
 
-if( isset( $_GET['browse'] ) && !empty( $_GET['browse'] ) ){
-	include_once("JSON.php");
-	$json = new JSON;
-	
-	$offset = ($_GET['offset']) ? $_GET['offset'] : 0;
-	$max_per_page = ($_GET['limit']) ? $_GET['limit'] : 42;
-	$limit_args = sprintf("LIMIT %d, %d", $offset, $max_per_page);
-	$sql = "SELECT 
-				post_title, post_excerpt, 
-				post_content, ID, 
-				post_name 
-			FROM $wpdb->posts 
-			WHERE post_type = 'attachment' 
-			AND post_mime_type LIKE '%image/%' 
-			$limit_args";
+    $offset = ($_GET['offset']) ? $_GET['offset'] : 0;
+    $max_per_page = ($_GET['limit']) ? $_GET['limit'] : 42;
+    $limit_args = sprintf("LIMIT %d, %d", $offset, $max_per_page);
+    $sql = "SELECT 
+                post_title, post_excerpt, 
+                post_content, ID, 
+                post_name 
+            FROM $wpdb->posts 
+            WHERE post_type = 'attachment' 
+            AND post_mime_type LIKE '%image/%' 
+            $limit_args";
 
-	$attachment_posts = $wpdb->get_results($sql, OBJECT);
+    $attachment_posts = $wpdb->get_results($sql, OBJECT);
 
-	if( $attachment_posts ){
-		foreach ($attachment_posts as $a => $v ){
-			$thumbnail = wp_get_attachment_image_src($v->ID, 'thumbnail', false, true);
-			$attachment_posts[$a]->thumbnail = $thumbnail;
-			$intermediate = wp_get_attachment_image_src($v->ID, 'medium', false, true);
-			$attachment_posts[$a]->intermediate = $intermediate;
-			$attachment_posts[$a]->url = wp_get_attachment_url($v->ID);
-		}
-		echo $json->serialize($attachment_posts);
-	}
-	else{
-		echo '[]';
-	}
-	exit(0);
+    if( $attachment_posts ){
+        foreach ($attachment_posts as $a => $v ){
+            $thumbnail                          = wp_get_attachment_image_src($v->ID, 'thumbnail', false, true);
+            $attachment_posts[$a]->thumbnail    = $thumbnail;
+            $intermediate                       = wp_get_attachment_image_src($v->ID, 'medium', false, true);
+            $attachment_posts[$a]->intermediate = $intermediate;
+            $attachment_posts[$a]->url          = wp_get_attachment_url($v->ID);
+        }
+        echo json_encode($attachment_posts);
+    }
+    else{
+        echo '[]';
+    }
+    die();
 }
 
 // grab the blogs url once

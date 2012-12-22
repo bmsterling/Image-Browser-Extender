@@ -12,61 +12,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>{#wpmedialibrary_dlg.title}</title>
-	<script type="text/javascript">
-	var masterUrl = "<?php echo $blogsurl;?>";
-	</script>
-	<script type="text/javascript" src="../../../../../wp-includes/js/tinymce/tiny_mce_popup.js"></script>
-	<script type="text/javascript" src="../../../../../wp-includes/js/jquery/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-personalized-1.5.min.js"></script>
-	<script type="text/javascript" src="js/jquery.metadata.pack.js"></script>
-	<script type="text/javascript" src="js/dialog.js"></script>
-	<style>
-		ul{
-			list-style:none;
-			margin:0;
-			padding:0;
-		}
-		#imagegroup{
-			position:relative;
-			background:#fff;
-			margin-top:5px;
-			border:1px solid #ccc;
-			height:304px;
-			overflow:auto;
-			padding:1px;
-			cursor: default;
-		}
-		#imagegrouplist{
-			list-style:none;
-			margin:0;
-			padding:0;
-		}
-		li.ui-selectee{
-			float:left;
-			border:1px solid #000;
-			height:100px;
-			width:100px;
-			margin:10px;
-			background:#fff;
-		}
-		li.ui-selectee img{
-			width:80px;
-			height:80px;
-			margin:10px;
-		}
-		li.ui-selected{
-			border:1px solid #ccc;
-			background:#eaeaea;
-		}
-		#prev, #next{width:110px;}
-		#loading{
-			position:absolute;
-			top:0;
-			left:0;
-			z-index:999;
-		}
-	</style>
+    <title>{#wpmedialibrary_dlg.title}</title>
+    <script type="text/javascript">
+    var masterUrl = "<?php echo $blogsurl;?>";
+    </script>
+    <script type="text/javascript" src="../../../../../wp-includes/js/tinymce/tiny_mce_popup.js"></script>
+    <script type="text/javascript" src="../../../../../wp-includes/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-personalized-1.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery.metadata.pack.js"></script>
+    <script type="text/javascript" src="js/dialog.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/wpmedialibrary.css" media="all"/>
 </head>
 <body>
 
@@ -89,9 +44,17 @@
 				<td valign="top" width="25%">
 					<h3>Size</h3>
 					<ul>
-						<li><label><input type="radio" name="insertSize" checked="checked" value="thumbnail"/> Thumbnail size</label></li>
-						<li><label><input type="radio" name="insertSize" value="intermediate"/> Medium size</label></li>
-						<li><label><input type="radio" name="insertSize" value="full"/> Full size </label></li>
+<?php
+$sizes = apply_filters( 'image_size_names_choose', array(
+    'thumbnail' => __('Thumbnail'),
+    'medium'    => __('Medium'),
+    'large'     => __('Large'),
+    'full'      => __('Full Size'),
+) );
+
+foreach ( $sizes as $value => $name ) :
+    echo "<li><label><input type=\"radio\" name=\"insertSize\" checked=\"checked\" value=\"$value\"/> $name</label></li>";
+endforeach; ?>
 					</ul>
 				</td>
 				<td valign="top" width="25%">
