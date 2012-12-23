@@ -4,17 +4,17 @@ Donate link:http://benjaminsterling.com/donations/
 Tags: attachment, browsing, image, insert, richtext, editor, post, page
 Requires at least: 3.1
 Tested up to: 3.5
-Stable tag: 0.3.2
+Stable tag: 0.3.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Extends the features of the rich text editor for Wordpress by adding a new button that will allow you to easily browse all you image attachments.
-
-Please submit any bugs or suggested improvements to <a href=\"https://github.com/bmsterling/Image-Browser-Extender/issues\">https://github.com/bmsterling/Image-Browser-Extender/issues</a>
-
-
 
 == Description ==
 
 Extends the features of the rich text editor for Wordpress by adding a new button that will allow you to easily browse all you image attachments and insert them into a post/page.  This is not a replacement for the media manager, this simply makes it easier to insert one or more photos into your post or page.
+
+Please submit any bugs or suggested improvements to <a href=\"https://github.com/bmsterling/Image-Browser-Extender/issues\">https://github.com/bmsterling/Image-Browser-Extender/issues</a>
 
 == Installation ==
 
@@ -24,16 +24,17 @@ Extends the features of the rich text editor for Wordpress by adding a new butto
 
 == Credits ==
 
-Copyright 2012  Benjamin Sterling  (http://benjaminsterling.com)
+Copyright 2012  Benjamin Sterling  (benjamin.sterling@kenzomedia.com)
 
 This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+it under the terms of the GNU General Public License, version 2, as 
+published by the Free Software Foundation.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-See the GNU General Public License for more details:
-http://www.gnu.org/licenses/gpl.txt
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
