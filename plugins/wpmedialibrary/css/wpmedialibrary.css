@@ -1,0 +1,44 @@
+ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#imagegroup{
+    position:relative;
+    background:#fff;
+    margin-top:5px;
+    border:1px solid #ccc;
+    height:304px;
+    overflow:auto;
+    padding:1px;
+    cursor: default;
+}
+#imagegrouplist{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+li.ui-selectee{
+    float:left;
+    border:1px solid #000;
+    height:100px;
+    width:100px;
+    margin:10px;
+    background:#fff;
+}
+li.ui-selectee img{
+    width:80px;
+    height:80px;
+    margin:10px;
+}
+li.ui-selected{
+    border:1px solid #ccc;
+    background:#eaeaea;
+}
+#prev, #next{width:110px;}
+#loading{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:999;
+}

@@ -21,7 +21,7 @@
     <script type="text/javascript" src="js/jquery-ui-personalized-1.5.min.js"></script>
     <script type="text/javascript" src="js/jquery.metadata.pack.js"></script>
     <script type="text/javascript" src="js/dialog.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/wpmedialibrary.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo plugins_url('css/wpmedialibrary.css', __FILE__);?>" media="all"/>
 </head>
 <body>
 

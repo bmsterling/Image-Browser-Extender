@@ -58,7 +58,7 @@ function ibe_action_callback () {
 }
 
 // grab the blogs url once
-$blogsurl = get_bloginfo('wpurl') . '/wp-content/plugins/' . basename(dirname(__FILE__)) . '/plugins';
+$blogsurl = plugins_url('',__FILE__) . '/plugins';
 $serverpath = dirname(__FILE__) . '\plugins';
 
 global $ee_plugins, $ibe_plugins_lang, $ee_buttons_3;
